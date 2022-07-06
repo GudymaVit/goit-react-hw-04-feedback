@@ -1,0 +1,21 @@
+button {
+    color: #090909;
+    padding: 8px;
+    text-align: center;
+    border-radius: 10px;
+    background: #e8e8e8;
+    border: none;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+    cursor: pointer;
+}
+
+button:not(:last-child) {
+    margin-right: 10px;
+}
+
+button:hover {
+    background: blue;
+    color: #ffffff;
+}
+
