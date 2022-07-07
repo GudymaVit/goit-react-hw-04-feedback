@@ -3,6 +3,7 @@ import Section from './section';
 import Statistic from './statistic';
 import Feedbackoptions from './feedbackOptions';
 import Notification from './notification';
+import styles from '../components/feedbackOptions/feedbackOptions.module.css';
 
 const btn = ['Good', 'Neutral', 'Bad'];
 
@@ -15,7 +16,7 @@ class App extends Component {
 
   handlerChangeStateValue = e => {
     let name = e.target.name.toLowerCase();
-    console.log(name);
+
     this.setState(prevState => ({
       [name]: prevState[name] + 1,
     }));
@@ -26,13 +27,12 @@ class App extends Component {
   }
 
   countPositiveFeedbackPercentage() {
-    // if (this.state.good === 0) return 0;
     return Math.round((this.state.good / this.countTotalFeedback()) * 100);
   }
 
   render() {
     return (
-      <div>
+      <div className={styles.container}>
         <Section title="Please leave feedback">
           <Feedbackoptions
             options={btn}
