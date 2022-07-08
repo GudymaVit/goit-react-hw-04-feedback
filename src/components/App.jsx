@@ -5,8 +5,6 @@ import Feedbackoptions from './feedbackOptions';
 import Notification from './notification';
 import styles from '../components/feedbackOptions/feedbackOptions.module.css';
 
-const btn = ['Good', 'Neutral', 'Bad'];
-
 class App extends Component {
   state = {
     good: 0,
@@ -35,7 +33,7 @@ class App extends Component {
       <div className={styles.container}>
         <Section title="Please leave feedback">
           <Feedbackoptions
-            options={btn}
+            options={Object.keys(this.state)}
             onLeaveFeedback={this.handlerChangeStateValue}
           ></Feedbackoptions>
         </Section>
