@@ -5,8 +5,6 @@ import Feedbackoptions from './feedbackOptions';
 import Notification from './notification';
 import styles from '../components/feedbackOptions/feedbackOptions.module.css';
 
-const options = ['Good', 'Neutral', 'Bad'];
-
 const App = () => {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
@@ -39,7 +37,7 @@ const App = () => {
     <div className={styles.container}>
       <Section title="Please leave feedback">
         <Feedbackoptions
-          options={options}
+          options={Object.keys({ good, neutral, bad })}
           onLeaveFeedback={handlerChangeStateValue}
         />
       </Section>
